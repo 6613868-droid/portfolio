@@ -378,6 +378,19 @@ header{position:sticky;top:0}.hero-composition{min-height:750px}#home{scroll-mar
 .komplekt-mobile{max-width:360px;justify-self:center}
 @media(max-width:700px){.komplekt-comparison,.komplekt-details-gallery{grid-template-columns:1fr;gap:32px;margin:24px 0 40px}.komplekt-details-gallery>figure{width:100%;max-width:420px;justify-self:center}}
 
+/* Four service formats share content; Surface uses individual illustrations. */
+.services-grid{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}
+.service-card{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+.service-card>img{height:auto;min-height:0;max-height:none;aspect-ratio:1.06;object-fit:cover}
+.service-card>div{padding:24px 20px}
+.service-card h3{font-size:clamp(22px,2vw,30px);line-height:1.15;overflow-wrap:break-word}
+.service-card p:not(.service-price){font-size:13px;line-height:1.65;margin-bottom:22px}
+.service-price{font-size:21px}
+.service-card a{border-top:1px solid var(--line);padding-top:14px;margin-top:auto;font-size:13px}
+[data-reality=surface] .about-art>img{opacity:1;object-position:center}
+@media(max-width:1100px){.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.services-grid{grid-template-columns:1fr}.service-card>img{aspect-ratio:1.45}.service-card h3{font-size:28px}.service-card>div{padding:24px}}
+
 /* Other Side depth system: hero and shared dark sections. */
 .hero-composition.other{background:#060c18}
 .other .world-distance{background:radial-gradient(ellipse at 74% 35%,#77658438,transparent 36%),radial-gradient(ellipse at 56% 75%,#23466430,transparent 47%),linear-gradient(118deg,#060c18 4%,#0b1629 55%,#172b43 78%,#060c18)}
