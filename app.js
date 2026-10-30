@@ -240,9 +240,10 @@ const portfolio = {
     formEndpoint: 'https://formsubmit.co/sasha_hmeleva@bk.ru', // Native POST. Owner must activate the recipient by email before launch.
 };
 const services = [
+    { id: 'businesscard', title: 'Сайт-визитка', price: 15000, priceConfirmed: true, description: 'Компактный сайт для знакомства с вами, вашими услугами или продуктом. Индивидуальный дизайн, адаптивная сборка, контакты и форма заявки.', imagePosition: '72% center' },
     { id: 'landing', title: 'Лендинг', price: 25000, priceConfirmed: true, description: 'Индивидуальный дизайн, адаптивная сборка, форма заявки', imagePosition: '72% center' },
-    { id: 'website', title: 'Многостраничный сайт', price: 45000, priceConfirmed: true, description: 'Продуманная структура, дизайн и разработка согласованного объёма страниц', imagePosition: '26% center' },
-    { id: 'redesign', title: 'Редизайн', price: 20000, priceConfirmed: true, description: 'Обновление визуала и удобства существующего сайта', imagePosition: '5% center' },
+    { id: 'website', title: 'Многостраничный сайт', price: 40000, priceConfirmed: true, description: 'Продуманная структура, дизайн и разработка согласованного объёма страниц', imagePosition: '26% center' },
+    { id: 'redesign', title: 'Редизайн', price: 15000, priceConfirmed: true, description: 'Обновление визуала и удобства существующего сайта', imagePosition: '5% center' },
 ];
 const workSteps = [
     ['Бриф', 'Обсуждаем задачу, аудиторию, ваши цели и референсы.'],
@@ -580,6 +581,8 @@ function ProjectSection() {
             React.createElement("p", { className: "surface-project-summary" }, p.headline),
             React.createElement("a", { className: "surface-project-open", href: '#case-' + p.id, "aria-label": 'О проекте ' + p.name }, "\u2197")))));
 }
+const serviceImages = { businesscard: './assets/service-businesscard.webp', landing: './assets/service-landing.webp', website: './assets/service-website.webp', redesign: './assets/service-redesign.webp' };
+const darkServiceImages = { businesscard: './assets/service-dark-businesscard.webp', landing: './assets/service-dark-landing.webp', website: './assets/service-dark-website.webp', redesign: './assets/service-dark-redesign.webp' };
 function Services() { const { reality } = useReality(); return React.createElement("section", { id: "services", className: "content-section services-section wave-host" },
     React.createElement(AmbientWaves, null),
     React.createElement("div", { className: "block-heading" },
@@ -593,7 +596,7 @@ function Services() { const { reality } = useReality(); return React.createEleme
             React.createElement("br", null),
             "\u043E\u0442 \u043E\u0434\u043D\u043E\u0439 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B \u0434\u043E \u0446\u0435\u043B\u043E\u0433\u043E \u043F\u0440\u043E\u0435\u043A\u0442\u0430.")),
     React.createElement("div", { className: "services-grid" }, services.map(service => React.createElement("article", { className: "service-card", key: service.id },
-        React.createElement("img", { src: reality === 'other' ? ART.atelier : ART.surface, style: { objectPosition: service.imagePosition }, alt: "", loading: "lazy" }),
+        React.createElement("img", { src: reality === 'other' ? darkServiceImages[service.id] : serviceImages[service.id], style: { objectPosition: 'center' }, alt: "", loading: "lazy" }),
         React.createElement("div", null,
             React.createElement("h3", null, service.title),
             React.createElement("p", { className: "service-price" }, service.priceConfirmed && service.price !== null ? 'от ' + service.price.toLocaleString('ru-RU') + ' ₽' : 'Стоимость — после брифа'),
@@ -641,16 +644,7 @@ function About() { const { reality } = useReality(); const portrait = reality ==
             "\u0411\u043E\u043B\u044C\u0448\u0435 \u043E\u0431\u043E \u043C\u043D\u0435 ",
             React.createElement("span", null, "\u2192"))),
     React.createElement("div", { className: "about-art", "aria-hidden": "true" },
-        React.createElement("img", { src: reality === 'other' ? ART.aboutStudio : ART.surface, alt: "", loading: "lazy" }),
-        reality === 'surface' && React.createElement("div", null,
-            "\u0425\u041E\u0420\u041E\u0428\u0418\u0415",
-            React.createElement("br", null),
-            "\u0421\u0410\u0419\u0422\u042B",
-            React.createElement("br", null),
-            "\u041D\u0410\u0427\u0418\u041D\u0410\u042E\u0422\u0421\u042F",
-            React.createElement("br", null),
-            "\u0421 \u0412\u0410\u0428\u0415\u0419 \u0418\u0414\u0415\u0418",
-            React.createElement("span", null, "\u2661")))); }
+        React.createElement("img", { src: reality === 'other' ? ART.aboutStudio : './assets/about-light-moodboard.webp', alt: "", loading: "lazy" }))); }
 function Faq() { return React.createElement("section", { id: "faq", className: "content-section faq-section wave-host" },
     React.createElement(AmbientWaves, null),
     React.createElement("div", { className: "block-heading" },
