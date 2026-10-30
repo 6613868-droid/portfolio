@@ -364,6 +364,20 @@ header{position:sticky;top:0}.hero-composition{min-height:750px}#home{scroll-mar
 .contact-start{min-width:0}.contact-start h3{font:400 28px/1.2 var(--heading);margin:0 0 18px}.contact-start p,.contact-start li{font-size:13px;line-height:1.8;color:var(--muted)}.contact-start ul{padding-left:18px;margin:18px 0}.contact-start li{padding:3px 0}.contact-start .solid-link{margin-top:10px;gap:16px}
 .inquiry-form .form-honeypot{display:none}.form-delivery-note{font-size:10px;line-height:1.7;color:var(--muted);margin:14px 0}.form-delivery-note a{text-decoration:underline;text-underline-offset:3px}
 
+.komplekt-before{padding:40px 0;border-bottom:1px solid var(--line)}.komplekt-before h2{font-family:var(--heading);font-size:clamp(32px,4vw,60px);font-weight:400}.komplekt-before>p{line-height:1.8;max-width:650px}.komplekt-before-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin:32px 0}.komplekt-before-grid figure{margin:0;min-width:0}.komplekt-before-frame{aspect-ratio:1920/914;overflow:hidden;background:#fff}.komplekt-before-frame img{display:block;width:100%;height:auto;transform:translateY(-11.6667%)}.komplekt-before-grid figcaption{font-size:12px;line-height:1.6;margin-top:12px;color:var(--muted)}@media(max-width:700px){.komplekt-before-grid{grid-template-columns:1fr}.komplekt-case h1{font-size:clamp(40px,10vw,70px)}}
+
+/* Komplekt: supplied redesign screens, isolated from other cases. */
+.komplekt-comparison,.komplekt-details-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin:36px 0 64px;align-items:start}
+.komplekt-comparison figure,.komplekt-after figure{margin:0;min-width:0}
+.komplekt-comparison img,.komplekt-after img{display:block;width:100%;height:auto}
+.komplekt-comparison figcaption,.komplekt-after figcaption{font-size:12px;line-height:1.7;color:var(--muted);margin-top:14px}
+.komplekt-comparison>figure,.komplekt-catalog{border:1px solid var(--line);padding:12px}
+.komplekt-details-gallery{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(24px,6vw,80px)}
+.komplekt-request-frame{aspect-ratio:460/914;overflow:hidden;background:#fff;position:relative}
+.komplekt-request-frame img{position:absolute;width:417.3913%;max-width:none;left:-157.6087%;top:-13.7856%}
+.komplekt-mobile{max-width:360px;justify-self:center}
+@media(max-width:700px){.komplekt-comparison,.komplekt-details-gallery{grid-template-columns:1fr;gap:32px;margin:24px 0 40px}.komplekt-details-gallery>figure{width:100%;max-width:420px;justify-self:center}}
+
 /* Other Side depth system: hero and shared dark sections. */
 .hero-composition.other{background:#060c18}
 .other .world-distance{background:radial-gradient(ellipse at 74% 35%,#77658438,transparent 36%),radial-gradient(ellipse at 56% 75%,#23466430,transparent 47%),linear-gradient(118deg,#060c18 4%,#0b1629 55%,#172b43 78%,#060c18)}
